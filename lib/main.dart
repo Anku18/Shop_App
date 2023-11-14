@@ -46,7 +46,6 @@ class MyApp extends StatelessWidget {
           title: 'MyApp',
           theme: ThemeData(
             primarySwatch: Colors.purple,
-            accentColor: Colors.deepOrange,
             fontFamily: 'Lato',
           ),
           home: auth.isAuth

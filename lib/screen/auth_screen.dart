@@ -138,7 +138,7 @@ class _AuthCardState extends State<AuthCard>
         title: const Text('An Error Occured'),
         content: Text(message),
         actions: [
-          FlatButton(
+          TextButton(
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -292,26 +292,29 @@ class _AuthCardState extends State<AuthCard>
                 if (_isLoading)
                   const CircularProgressIndicator()
                 else
-                  RaisedButton(
-                    child:
-                        Text(_authMode == AuthMode.Login ? 'LOGIN' : 'SIGN UP'),
-                    onPressed: _submit,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30.0, vertical: 8.0),
+                      backgroundColor: Theme.of(context).primaryColor,
                     ),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 30.0, vertical: 8.0),
-                    color: Theme.of(context).primaryColor,
-                    textColor: Theme.of(context).primaryTextTheme.button?.color,
+                    child: Text(
+                      _authMode == AuthMode.Login ? 'LOGIN' : 'SIGN UP',
+                      style: TextStyle(
+                        color: Theme.of(context).primaryTextTheme.button?.color,
+                      ),
+                    ),
+                    onPressed: _submit,
                   ),
-                FlatButton(
+                TextButton(
                   child: Text(
-                      '${_authMode == AuthMode.Login ? 'SIGNUP' : 'LOGIN'} INSTEAD'),
+                    '${_authMode == AuthMode.Login ? 'SIGNUP' : 'LOGIN'} INSTEAD',
+                    style: TextStyle(color: Theme.of(context).primaryColor),
+                  ),
                   onPressed: _switchAuthMode,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30.0, vertical: 4),
-                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  textColor: Theme.of(context).primaryColor,
                 ),
               ],
             ),

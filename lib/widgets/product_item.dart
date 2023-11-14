@@ -46,7 +46,7 @@ class ProductItem extends StatelessWidget {
             onPressed: () {
               product.toggleFavouriteStatus(authData.token!, authData.userId!);
             },
-            color: Theme.of(context).accentColor,
+            color: Theme.of(context).colorScheme.secondary,
           ),
           title: Text(
             product.title,
@@ -70,7 +70,7 @@ class ProductItem extends StatelessWidget {
                 ),
               );
             },
-            color: Theme.of(context).accentColor,
+            color: Theme.of(context).colorScheme.secondary,
           ),
         ),
       ),

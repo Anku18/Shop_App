@@ -99,7 +99,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
             title: const Text('An Error Occurred'),
             content: const Text('Something went wrong.'),
             actions: [
-              FlatButton(
+              TextButton(
                 onPressed: () {
                   Navigator.of(ctx).pop();
                 },

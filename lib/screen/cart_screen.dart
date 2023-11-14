@@ -78,7 +78,7 @@ class _OrderButtonState extends State<OrderButton> {
   var _isLoading = false;
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return TextButton(
       child: _isLoading
           ? const CircularProgressIndicator()
           : const Text('ORDER NOW'),
